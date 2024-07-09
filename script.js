@@ -17,7 +17,8 @@ function rotateBannerText() {
     }, 500);
 }
 
-setInterval(rotateBannerText, 3000); // Change text every 5 seconds
+setInterval(rotateBannerText, 3000); // Change text every 3 seconds
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const banner = document.querySelector('.animated-banner');
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         banner.style.background = 'linear-gradient(45deg, var(--color-secondary), var(--color-primary))';
     });
+
 });
 
 const observer = new IntersectionObserver((entries) => {
@@ -198,6 +200,24 @@ educationLink.href = '#education';
 educationLink.textContent = 'Education';
 navLinks.insertBefore(educationLink, document.querySelector('nav a[href="#resume"]'));
 
+let scrollPosition = 0;
+
+function disableBodyScroll() {
+    scrollPosition = window.pageYOffset;
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollPosition}px`;
+    document.body.style.width = '100%';
+}
+
+function enableBodyScroll() {
+    document.body.style.removeProperty('overflow');
+    document.body.style.removeProperty('position');
+    document.body.style.removeProperty('top');
+    document.body.style.removeProperty('width');
+    window.scrollTo(0, scrollPosition);
+}
+
 document.querySelectorAll('.project').forEach(project => {
     project.addEventListener('click', () => {
         const projectId = parseInt(project.getAttribute('data-project'));
@@ -224,7 +244,20 @@ document.querySelectorAll('.project').forEach(project => {
         `;
 
         popupOverlay.classList.add('active');
+        disableBodyScroll();
     });
+});
+
+popupClose.addEventListener('click', () => {
+    popupOverlay.classList.remove('active');
+    enableBodyScroll();
+});
+
+popupOverlay.addEventListener('click', (e) => {
+    if (e.target === popupOverlay) {
+        popupOverlay.classList.remove('active');
+        enableBodyScroll();
+    }
 });
 
 popupClose.addEventListener('click', () => {
@@ -315,3 +348,24 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     document.head.appendChild(script);
 });
+
+// Theme toggle functionality
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = themeToggle.querySelector('i');
+const body = document.body;
+
+// Check for saved theme preference or default to dark theme
+const currentTheme = localStorage.getItem('theme') || 'dark';
+body.classList.toggle('light-theme', currentTheme === 'light');
+updateThemeIcon(currentTheme);
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light-theme');
+    const theme = body.classList.contains('light-theme') ? 'light' : 'dark';
+    localStorage.setItem('theme', theme);
+    updateThemeIcon(theme);
+});
+
+function updateThemeIcon(theme) {
+    themeIcon.className = theme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+}

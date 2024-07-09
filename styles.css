@@ -1,10 +1,23 @@
 :root {
+    /* Dark theme variables */
     --color-bg: #121212;
     --color-surface: #1e1e1e;
     --color-primary: #ffffff;
     --color-secondary: #03dac6;
     --color-text: #ffffff;
     --color-text-secondary: #b0b0b0;
+    --color-link: #03dac6;
+    --color-link-hover: #ffffff;
+
+    /* Light theme variables */
+    --color-bg-light: #ffffff;
+    --color-surface-light: #f0f0f0;
+    --color-primary-light: #121212;
+    --color-secondary-light: #018786;
+    --color-text-light: #121212;
+    --color-text-secondary-light: #6c6c6c;
+    --color-link-light: #018786;
+    --color-link-hover-light: #121212;
 }
 
 body, html {
@@ -73,6 +86,40 @@ h2 {
 p {
     line-height: 1.6;
     color: var(--color-text-secondary);
+}
+
+.theme-toggle {
+    margin-left: auto;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.theme-toggle:hover {
+    color: var(--color-secondary);
+}
+
+.cert-link {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.cert-link:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
+/* Light theme styles */
+body.light-theme {
+    --color-bg: var(--color-bg-light);
+    --color-surface: var(--color-surface-light);
+    --color-primary: var(--color-primary-light);
+    --color-secondary: var(--color-secondary-light);
+    --color-text: var(--color-text-light);
+    --color-text-secondary: var(--color-text-secondary-light);
+    --color-link: var(--color-link-light);
+    --color-link-hover: var(--color-link-hover-light);
 }
 
 .profile-picture-container {
@@ -390,6 +437,28 @@ nav a:hover {
 .popup-details li {
     margin-bottom: 10px;
     color: var(--color-text-secondary);
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-secondary);
+    color: var(--color-bg);
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.popup-close:hover {
+    background-color: var(--color-primary);
+    transform: scale(1.1);
 }
 
 .education-grid {
