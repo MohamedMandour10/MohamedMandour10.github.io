@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Elsayed - Professional Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="vector-shape shape-circle"></div>
+    <div class="vector-shape shape-square"></div>
+    <div class="vector-shape shape-triangle"></div>
+    <div class="vector-shape shape-dots"></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="animated-banner">
+            <div class="banner-text">Welcome to My Portfolio</div>
+            <div class="banner-icons">
+                <i class="fas fa-code"></i>
+                <i class="fas fa-brain"></i>
+                <i class="fas fa-laptop-medical"></i>
+            </div>
+        </div>
+
+        <!-- Home Section -->
+        <div id="home" class="section">
+            <div class="content profile-section">
+                <img src="Assets/Mandour-circle.png" alt="Mohamed Elsayed" class="profile-picture">
+                <div class="profile-info">
+                    <h1>Mohamed Elsayed</h1>
+                    <p>Welcome to my portfolio! As a dedicated Biomedical Engineering student, I am passionate about innovation and problem-solving. 
+                       My diverse skill set includes <strong style="color:white">Machine Learning</strong>, <strong style="color:white">Digital Signal Processing</strong>, <strong style="color:white">Computer Vision</strong> and <strong style="color:white">Data Visualization</strong>. 
+                       I have experience applying artificial intelligence to tackle a variety of challenges and am currently seeking a career in the field of deep learning. 
+                       My commitment to leveraging technology for impactful solutions drives my continuous pursuit of knowledge and excellence.</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/MohamedMandour10" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/muhamed-elsayed-489333312/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:mhmdabomandour11@gmail.com"><i class="far fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div id="skills" class="section">
+            <div class="content">
+                <h2>Skills</h2>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <h3><i class="fas fa-robot"></i> Machine learning</h3>
+                        <p>Scikit-learn, Keras, PyTorch, OpenCV, Scipy</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3><i class="fas fa-database"></i> Data Analysis</h3>
+                        <p>SQL, Dask, Polars, NumPy, Pandas, Matplotlib, Seaborn</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3><i class="fas fa-desktop"></i> Desktop App Development</h3>
+                        <p>Qt5, PyQt</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3><i class="fas fa-code-branch"></i> Version Control</h3>
+                        <p>Git, GitHub</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3><i class="fas fa-code"></i> Programming Concepts</h3>
+                        <p>OOP, Functional Programming, Data Structures, Algorithms</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3><i class="fas fa-paint-brush"></i> Design</h3>
+                        <p>Adobe Photoshop, Adobe Illustrator, PowerPoint, Blender</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div id="projects" class="section">
+            <div class="content">
+                <h2>Projects</h2>
+                <div class="project-grid">
+                    <div class="project" data-project="1">
+                        <img src="Assets\task1.jpg" alt="ICU Monitor Viewer" class="project-image">
+                        <div class="project-info">
+                            <h3>ICU Monitor Viewer</h3>
+                            <p>A PyQt6 application that provides Intuitive UI with dual graph display, cine mode, and signal manipulation features, 
+                                supporting signal file browsing, export to PDF reports, and seamless integration for optimal user experience.</p>
+                        </div>
+                    </div>
+                    <div class="project" data-project="2">
+                        <img src="Assets\MediSchedule.png" alt="MediSchedule" class="project-image">
+                        <div class="project-info">
+                            <h3>AI-Driven Appointment Scheduler</h3>
+                            <p>Created a scheduler system for Fanous Clinic, USA, using AI to optimize appointments based on disease reports, 
+                                leveraging patient data and ML models to offer instant, data-driven suggestions.</p>
+                        </div>
+                    </div>
+                    <div class="project" data-project="3">
+                        <img src="Assets\FINAL-PROJECT.jpg" alt="VisionaryID" class="project-image">
+                        <div class="project-info">
+                            <h3>VisionaryID</h3>
+                            <p>Utilized OpenCV for offline and real-time face detection and EigenFace recognition for accurate face identification, 
+                                implementing online camera integration and providing a good visual representation of detection and recognition results.</p>
+                        </div>
+                    </div>
+                    <div class="project" data-project="4">
+                        <img src="Assets\mockup.jpg" alt="Project 4" class="project-image">
+                        <div class="project-info">
+                            <h3> Obesity Risk Predection with Diet Plans</h3>
+                            <p>Developed a mobile app that inputs personal information and lifestyle habits to determine obesity type 
+                                and provides tailored meal and exercise suggestions using ML for recommended calorie intake.</p>
+                        </div>
+                    </div>
+                    <div class="project" data-project="5">
+                        <img src="Assets\A_futuristic_security_interface_combining_voice_and_fi_1.jpg" alt="Security Voice-code Access" class="project-image">
+                        <div class="project-info">
+                            <h3>Security Voice-code Access</h3>
+                            <p>A Security Voice-code Access system with two operation modes using fingerprint and spectrogram concepts. 
+                                The software is designed to be trained on 8 individuals and can operate in two modes: Security Voice Code and Security Voice Fingerprint.</p>
+                        </div>
+                    </div>
+                    <div class="project" data-project="6">
+                        <img src="Assets\DICOM-Demo.jpg" alt="DICOM Viewer with Volume Rendering" class="project-image">
+                        <div class="project-info">
+                            <h3>DICOM Viewer with Volume Rendering</h3>
+                            <p>A DICOM viewer with volume rendering capabilities, implemented using VTK (Visualization Toolkit) and pyQt. The application allows users to load DICOM files, 
+                                choose between surface rendering and ray casting rendering, and adjust parameters such as iso value for surface rendering and shading properties for ray casting rendering.</p>
+                        </div>
+                    </div>
+                    <div class="project" data-project="7">
+                        <img src="Assets\TheGuideBook.png" alt="The Guide Book" class="project-image">
+                        <div class="project-info">
+                            <h3>The Guide Book</h3>
+                            <p>the guidebook includes essential information and resources to help Biomedical Engineering students 
+                                navigate their academic journey, including course information. Designed for Biomedical Engineering students at Cairo University.</p>
+                        </div>
+                    </div>
+                    <div class="project" data-project="8">
+                        <img src="Assets\task2.jpg" alt="Signal Studio Pro" class="project-image">
+                        <div class="project-info">
+                            <h3>Signal Studio Pro</h3>
+                            <p>The PyQt6 Application supports features such as signal loading, component addition, generation, noise management, 
+                                comprehensive signal sampling, reconstruction, and error analysis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div id="education" class="section">
+            <div class="content">
+                <h2>Education</h2>
+                <div class="education-grid">
+                    <div class="education-item">
+                        <h3>Bachelor of System and Biomedical Engineering - Present</h3>
+                        <p><strong>University:</strong> Ciaro University</p>
+                        <p><strong>Expected Graduation Year:</strong> 2025</p>
+                        <p><strong>GPA:</strong> 3.6/4.0</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Professional Certifications</h3>
+                        <p><strong>Neural Networks and Deep Learning:</strong> <a href="https://drive.google.com/file/d/1NtRDYXj2q1NE_UxSom5zJ2ZV15qIsv4T/view?usp=drive_link" style="color: white;">Deeplearning.ai</a></p>
+                        <p><strong>Supervised Machine Learning:</strong> <a href="https://drive.google.com/file/d/1M-mPHqdWcFMypK2IkPMqgsy6aRhJkzYu/view?usp=drive_link" style="color: white;">Deeplearning.ai</a></p>
+                        <p><strong>Clean Code and Code Refactoring:</strong> <a href="https://drive.google.com/file/d/1sOc-_XuQhuSVaOPoYt6TL2zt4CX1zpHK/view?usp=drive_link" style="color: white;">Ezz Medical</a></p>
+                    </div>                    
+                    <div class="education-item">
+                        <h3>Core Courses</h3>
+                        <p><strong>Math & Statistics:</strong> Calculus, Linear Algebra, Multi-Variable Calculus, Biostatitics</p>
+                        <p><strong>Machine/Deep Learning:</strong> Ai in Medical fields, Foundation of Deep Learning</p>
+                        <p><strong>Computer Science:</strong> OOP, Data Structures, Algorithms, DataBase, Embedded Systems</p>
+                        <p><strong>Equipment & Clinical Engineering:</strong> Medical Equipments (Siemens), Clinical Engineering</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resume Section -->
+        <div id="resume" class="section">
+            <div class="content">
+                <h2>Resume</h2>
+                <div class="resume-section">
+                    <p>View my full resume to learn more about my work experience, education, and skills.</p>
+                    <a href="Assets/Mohamed AboMandor-CV.pdf" target="_blank" class="view-resume">View Resume (PDF)</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact" class="section">
+            <div class="content">
+                <h2>Contact Me</h2>
+                <form id="contact-form" class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close">&times;</button>
+            <img src="" alt="Project Image" class="popup-image">
+            <div class="popup-details"></div>
+        </div>
+    </div>
+
+    <div id="resume-popup">
+        <iframe src="Assets/Mohamed AboMandor-CV.pdf"></iframe>
+        <span id="resume-close">&times;</span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
