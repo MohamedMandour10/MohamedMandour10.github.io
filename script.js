@@ -77,11 +77,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you for your message! I will get back to you soon.');
-    this.reset();
-});
+
 
 // Project pop-up functionality
 const projects = [
@@ -193,12 +189,10 @@ const popupDetails = document.querySelector('.popup-details');
 const popupClose = document.querySelector('.popup-close');
 const navLinks = document.querySelector('nav');
 const educationLink = document.createElement('a');
+const resumePopup = document.getElementById('resume-popup');
 const resumeButton = document.querySelector('.view-resume');
-const resumePopup = document.createElement('div');
+const resumeClose = document.getElementById('resume-close');
 
-educationLink.href = '#education';
-educationLink.textContent = 'Education';
-navLinks.insertBefore(educationLink, document.querySelector('nav a[href="#resume"]'));
 
 let scrollPosition = 0;
 
@@ -292,61 +286,24 @@ resumePopup.addEventListener('click', (e) => {
     }
 });
 
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if the form exists
     const form = document.getElementById('contact-form');
-    if (!form) {
-        console.error('Contact form not found');
-        return;
-    }
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxCbzbccj_oJFPR7kYl4k6nLZvWUjnKjWPr0y9-VutVHua9jo2eQ4HbzzCHZuTLBCsS/exec'; // Replace with your deployed script URL
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', e => {
         e.preventDefault();
-        
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData.entries());
-
-        console.log('Form data:', data); // Debug: Log form data
-
-        // Send email using EmailJS
-        emailjs.send("service_j9w46hq", "template_r83jeia", {
-            from_name: data.name,
-            user_email: data.email,
-            message: data.message,
-            to_email: "mhmdabomandour11@gmail.com"
-        }).then(function(response) {
-            console.log('EmailJS response:', response); // Debug: Log EmailJS response
-            alert('Thank you for your message! I will get back to you soon.');
-            form.reset();
-        }, function(error) {
-            console.error('EmailJS error:', error); // Debug: Log EmailJS error
-            alert('Oops! There was an error sending your message. Please try again later.');
-        });
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                console.log('Success!', response);
+                alert('Thank you for your message! I will get back to you soon.');
+                form.reset();
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert('Oops! There was an error sending your message. Please try again later.');
+            });
     });
-
-    // Add EmailJS SDK
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
-    script.onload = function() {
-        // Initialize EmailJS after the SDK has loaded
-        emailjs.init({
-            publicKey: 'ixfz79Le2MWyB0Rth',
-            // Do not allow headless browsers
-            blockHeadless: true,
-            limitRate: {
-                // Set the limit rate for the application
-                id: 'app',
-                // Allow 1 request per 10s
-                throttle: 10000,
-            },
-        });
-        console.log('EmailJS initialized'); // Debug: Confirm initialization
-    };
-    script.onerror = function() {
-        console.error('Error loading EmailJS SDK'); // Debug: Log script loading error
-    };
-    document.head.appendChild(script);
 });
 
 // Theme toggle functionality
