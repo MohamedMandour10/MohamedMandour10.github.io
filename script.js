@@ -1,58 +1,3 @@
-// Banner text rotation
-const bannerTexts = [
-    "Welcome to My Portfolio",
-    "Innovating in Biomedical Engineering",
-    "Passionate about AI & Machine Learning",
-    "Solving Problems with Technology"
-];
-let currentTextIndex = 0;
-
-function rotateBannerText() {
-    const bannerTextElement = document.querySelector('.banner-text');
-    currentTextIndex = (currentTextIndex + 1) % bannerTexts.length;
-    bannerTextElement.style.opacity = 0;
-    setTimeout(() => {
-        bannerTextElement.textContent = bannerTexts[currentTextIndex];
-        bannerTextElement.style.opacity = 1;
-    }, 500);
-}
-
-setInterval(rotateBannerText, 3000); // Change text every 3 seconds
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const banner = document.querySelector('.animated-banner');
-    const bannerText = document.querySelector('.banner-text');
-    const bannerIcons = document.querySelectorAll('.banner-icons i');
-
-    banner.addEventListener('mousemove', (e) => {
-        const rect = banner.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const xPercent = (x / rect.width - 0.5) * 2;
-        const yPercent = (y / rect.height - 0.5) * 2;
-
-        bannerText.style.transform = `translate(${xPercent * 10}px, ${yPercent * 10}px)`;
-
-        bannerIcons.forEach((icon, index) => {
-            const factor = (index + 1) * 5;
-            icon.style.transform = `translate(${xPercent * factor}px, ${yPercent * factor}px)`;
-        });
-
-        const gradientAngle = Math.atan2(yPercent, xPercent) * (180 / Math.PI) + 90;
-        banner.style.background = `linear-gradient(${gradientAngle}deg, var(--color-secondary), var(--color-primary))`;
-    });
-
-    banner.addEventListener('mouseleave', () => {
-        bannerText.style.transform = 'translate(0, 0)';
-        bannerIcons.forEach(icon => {
-            icon.style.transform = 'translate(0, 0)';
-        });
-        banner.style.background = 'linear-gradient(45deg, var(--color-secondary), var(--color-primary))';
-    });
-
-});
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -326,3 +271,4 @@ themeToggle.addEventListener('click', () => {
 function updateThemeIcon(theme) {
     themeIcon.className = theme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
 }
+

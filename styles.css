@@ -640,6 +640,30 @@ nav a:hover {
     .popup-image {
         height: auto;
     }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 0;
+    }
+
+    .hero-content {
+        margin-bottom: 40px;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .hero-image {
+        order: -1;
+        margin-bottom: 30px;
+    }
+
+    .profile-picture {
+        width: 200px;
+        height: 200px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -671,36 +695,151 @@ nav a:hover {
         font-size: 0.8em;
     }
 }
-.animated-banner {
-    background: linear-gradient(45deg, var(--color-secondary), var(--color-primary));
-    color: var(--color-bg);
-    padding: 40px 20px;
-    text-align: center;
-    position: relative;
+
+/* Hero Section Styles */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0;
     overflow: hidden;
-    margin-top: 35px;
+    position: relative;
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 4em;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.5em;
     margin-bottom: 30px;
-    transition: background 0.3s ease;
-    border-radius: 15px;
-    cursor: grab;
+    color: var(--color-secondary);
+    animation: fadeInUp 1s ease-out 0.2s backwards;
 }
 
-.banner-text {
-    font-size: 2.5em;
-    font-weight: bold;
-    transition: transform 0.2s ease, opacity 0.5s ease;
+.hero-cta {
+    display: flex;
+    gap: 20px;
+    animation: fadeInUp 1s ease-out 0.4s backwards;
 }
 
-.banner-icons {
-    margin-top: 20px;
+.cta-button {
+    padding: 12px 24px;
+    background-color: var(--color-secondary);
+    color: var(--color-bg);
+    text-decoration: none;
+    border-radius: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px rgba(3, 218, 198, 0.4);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
+}
+
+.hero-image {
+    flex: 1;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
-.banner-icons i {
-    font-size: 2em;
-    transition: transform 0.1s ease;
-    border-radius: 50%; 
-    cursor: grab;
+.profile-picture {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--color-secondary);
+    box-shadow: 0 0 30px rgba(3, 218, 198, 0.3);
+    animation: float 6s ease-in-out infinite;
+    z-index: 2;
+}
+
+.hero-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+}
+
+.shape-1 {
+    width: 100px;
+    height: 100px;
+    background-color: var(--color-secondary);
+    top: 20%;
+    left: 10%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.shape-2 {
+    width: 150px;
+    height: 150px;
+    border: 3px solid var(--color-secondary);
+    top: 50%;
+    right: 15%;
+    animation: float 10s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-primary);
+    bottom: 20%;
+    left: 20%;
+    animation: float 7s ease-in-out infinite 1s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-picture {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--color-secondary);
+    box-shadow: 0 0 30px rgba(3, 218, 198, 0.3);
+    animation: float 6s ease-in-out infinite;
+    z-index: 2;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.profile-picture:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 15px 40px rgba(3, 218, 198, 0.4);
 }
