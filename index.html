@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="Assets/Mandour-circle.png" alt="Mohamed Elsayed" class="profile-picture">
+                <img src="Assets/Mandour-circle.webp" alt="Mohamed Elsayed" class="profile-picture">
                 <div class="hero-shapes">
                     <div class="shape shape-1"></div>
                     <div class="shape shape-2"></div>
@@ -102,7 +102,7 @@
                 <h2>Projects</h2>
                 <div class="project-grid">
                     <div class="project" data-project="1">
-                        <img src="Assets\task1.jpg" alt="ICU Monitor Viewer" class="project-image">
+                        <img src="Assets\task1.webp" alt="ICU Monitor Viewer" class="project-image">
                         <div class="project-info">
                             <h3>ICU Monitor Viewer</h3>
                             <p>A PyQt6 application that provides Intuitive UI with dual graph display, cine mode, and signal manipulation features, 
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                     <div class="project" data-project="2">
-                        <img src="Assets\MediSchedule.png" alt="MediSchedule" class="project-image">
+                        <img src="Assets\MediSchedule.webp" alt="MediSchedule" class="project-image">
                         <div class="project-info">
                             <h3>AI-Driven Appointment Scheduler</h3>
                             <p>Created a scheduler system for Fanous Clinic, USA, using AI to optimize appointments based on disease reports, 
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                     <div class="project" data-project="3">
-                        <img src="Assets\FINAL-PROJECT.jpg" alt="VisionaryID" class="project-image">
+                        <img src="Assets\FINAL-PROJECT.webp" alt="VisionaryID" class="project-image">
                         <div class="project-info">
                             <h3>VisionaryID</h3>
                             <p>Utilized OpenCV for offline and real-time face detection and EigenFace recognition for accurate face identification, 
@@ -126,7 +126,7 @@
                         </div>
                     </div>
                     <div class="project" data-project="4">
-                        <img src="Assets\mockup.jpg" alt="Project 4" class="project-image">
+                        <img src="Assets\mockup.webp" alt="Project 4" class="project-image">
                         <div class="project-info">
                             <h3> Obesity Risk Predection with Diet Plans</h3>
                             <p>Developed a mobile app that inputs personal information and lifestyle habits to determine obesity type 
@@ -134,7 +134,7 @@
                         </div>
                     </div>
                     <div class="project" data-project="5">
-                        <img src="Assets\A_futuristic_security_interface_combining_voice_and_fi_1.jpg" alt="Security Voice-code Access" class="project-image">
+                        <img src="Assets\A_futuristic_security_interface_combining_voice_and_fi_1.webp" alt="Security Voice-code Access" class="project-image">
                         <div class="project-info">
                             <h3>Security Voice-code Access</h3>
                             <p>A Security Voice-code Access system with two operation modes using fingerprint and spectrogram concepts. 
@@ -142,7 +142,7 @@
                         </div>
                     </div>
                     <div class="project" data-project="6">
-                        <img src="Assets\DICOM-Demo.jpg" alt="DICOM Viewer with Volume Rendering" class="project-image">
+                        <img src="Assets\DICOM-Demo.webp" alt="DICOM Viewer with Volume Rendering" class="project-image">
                         <div class="project-info">
                             <h3>DICOM Viewer with Volume Rendering</h3>
                             <p>A DICOM viewer with volume rendering capabilities, implemented using VTK (Visualization Toolkit) and pyQt. The application allows users to load DICOM files, 
@@ -150,7 +150,7 @@
                         </div>
                     </div>
                     <div class="project" data-project="7">
-                        <img src="Assets\TheGuideBook.png" alt="The Guide Book" class="project-image">
+                        <img src="Assets\TheGuideBook.webp" alt="The Guide Book" class="project-image">
                         <div class="project-info">
                             <h3>The Guide Book</h3>
                             <p>the guidebook includes essential information and resources to help Biomedical Engineering students 
@@ -158,7 +158,7 @@
                         </div>
                     </div>
                     <div class="project" data-project="8">
-                        <img src="Assets\task2.jpg" alt="Signal Studio Pro" class="project-image">
+                        <img src="Assets\task2.webp" alt="Signal Studio Pro" class="project-image">
                         <div class="project-info">
                             <h3>Signal Studio Pro</h3>
                             <p>The PyQt6 Application supports features such as signal loading, component addition, generation, noise management, 
@@ -200,13 +200,15 @@
         <!-- Resume Section -->
         <div id="resume" class="section">
             <div class="content">
-                <h2>Resume</h2>
-                <div class="resume-section">
-                    <p>View my full resume to learn more about my work experience, education, and skills.</p>
-                    <a href="Assets/Mohamed AboMandor-CV.pdf" target="_blank" class="view-resume">View Resume (PDF)</a>
+              <h2>Resume</h2>
+              <div class="resume-section">
+                <div style="width: 100%; height: 800px; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                  <iframe src="Assets/Mohamed%20AboMandor-CV.pdf" width="100%" height="100%" style="border: none;"></iframe>
                 </div>
+                <a href="Assets/Mohamed%20AboMandor-CV.pdf" download="Mohamed_AboMandor_Resume.pdf" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #03dac6; color: #121212; text-decoration: none; border-radius: 4px; font-weight: bold;">Download Resume</a>
+              </div>
             </div>
-        </div>
+          </div>
 
         <!-- Contact Section -->
         <div id="contact" class="section">
@@ -229,10 +231,6 @@
         </div>
     </div>
 
-    <div id="resume-popup">
-        <iframe src="Assets/Mohamed AboMandor-CV.pdf"></iframe>
-        <span id="resume-close">&times;</span>
-    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>

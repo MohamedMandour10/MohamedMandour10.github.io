@@ -30,7 +30,7 @@ const projects = [
         id: 1,
         title: "ICU Monitor Viewer",
         github: "https://github.com/MohamedMandour10/Vital-Signals-Multichannel-Viewer",
-        image: "Assets\\task1.jpg",
+        image: "Assets\\task1.webp",
         technologies: ["Python", "PyQt6", "FPDF"],
         features: [
             "File Handling: Support for browsing and opening signal files in multiple formats, including CSV and DAT.",
@@ -44,7 +44,7 @@ const projects = [
         id: 2,
         title: "AI-Driven Appointment Scheduler",
         github: "https://github.com/MohamedMandour10/AI-Driven-Appointment-Scheduling-System",
-        image: "Assets\\MediSchedule.png",
+        image: "Assets\\MediSchedule.webp",
         technologies: ["Machine Learning pipeline", "Feature Selection", "Data Synthesis", "Boosting"],
         features: [
             "Automatically categorizes appointments based on patient disease reports to optimize scheduling.",
@@ -56,7 +56,7 @@ const projects = [
         id: 3,
         title: "VisionaryID",
         github: "https://github.com/MohamedMandour10/VisionaryID",
-        image: "Assets\\FINAL-PROJECT.jpg",
+        image: "Assets\\FINAL-PROJECT.webp",
         technologies: ["OpenCV", "Eigenfaces", "Real Time Data Processing"],
         features: [
             "Offline Face Detection: Uses Haar cascades to detect faces in uploaded images.",
@@ -69,7 +69,7 @@ const projects = [
         id: 4,
         title: "Obesity Risk Prediction with Diet Plans",
         github: "https://github.com/MohamedMandour10/Likelihood_of_obesity_provided_with_diet_plans",
-        image: "Assets\\mockup.jpg",
+        image: "Assets\\mockup.webp",
         technologies: ["Flutter", "Firebase", "Machine Learning", "Model deployment"],
         features: [
             "A project developed during the 16th UGRF Special Edition, 2023 Competition.",
@@ -81,7 +81,7 @@ const projects = [
         id: 5,
         title: "Security Voice-code Access",
         github: "https://github.com/MohamedMandour10/Voice-Recognation-Security-System",
-        image: "Assets\\A_futuristic_security_interface_combining_voice_and_fi_1.jpg",
+        image: "Assets\\A_futuristic_security_interface_combining_voice_and_fi_1.webp",
         technologies: ["Speech recognition", "Voice fingerprint", "Shazam Algorithm", "pyAudioAnalysis"],
         features: [
             "Operates in Security Voice Code mode (requires specific passcode sentences) and Security Voice Fingerprint mode (recognizes voice patterns of authorized individuals).",
@@ -93,7 +93,7 @@ const projects = [
         id: 6,
         title: "DICOM Viewer with Volume Rendering",
         github: "https://github.com/MohamedMandour10/GFX-DICOM-Viewer",
-        image: "Assets\\DICOM-Demo.jpg",
+        image: "Assets\\DICOM-Demo.webp",
         technologies: ["vtk", "Computer Graphics", "PyQt6"],
         features: [
             "Users can load DICOM series data by selecting a folder through a file dialog, utilizing vtkDICOMImageReader for data loading.",
@@ -105,7 +105,7 @@ const projects = [
         id: 7,
         title: "The Guide Book",
         github: "https://github.com/MohamedMandour10/The.Guide.Book",
-        image: "Assets\\TheGuideBook.png",
+        image: "Assets\\TheGuideBook.webp",
         technologies: ["Adobe Photoshop", "Adobe Illustrator", "MS Powerpoint"],
         features: [
             "A Comprehensive Roadmap for each course in each year",
@@ -117,7 +117,7 @@ const projects = [
         id: 8,
         title: "Signal Studio Pro",
         github: "https://github.com/MohamedMandour10/Sampling-Studio",
-        image: "Assets\\task2.jpg",
+        image: "Assets\\task2.webp",
         technologies: ["PyQt6", "DSP", "Scipy"],
         features: [
             "Load signal data, add/configure components (frequency, amplitude, phase), and generate mixed signals with noise.",
@@ -134,9 +134,6 @@ const popupDetails = document.querySelector('.popup-details');
 const popupClose = document.querySelector('.popup-close');
 const navLinks = document.querySelector('nav');
 const educationLink = document.createElement('a');
-const resumePopup = document.getElementById('resume-popup');
-const resumeButton = document.querySelector('.view-resume');
-const resumeClose = document.getElementById('resume-close');
 
 
 let scrollPosition = 0;
@@ -206,28 +203,6 @@ popupClose.addEventListener('click', () => {
 popupOverlay.addEventListener('click', (e) => {
     if (e.target === popupOverlay) {
         popupOverlay.classList.remove('active');
-    }
-});
-
-resumePopup.id = 'resume-popup';
-resumePopup.innerHTML = `
-    <iframe src="Assets\\Mohamed AboMandor-CV.pdf"></iframe>
-    <span id="resume-close">&times;</span>
-`;
-document.body.appendChild(resumePopup);
-
-resumeButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    resumePopup.classList.add('active');
-});
-
-document.getElementById('resume-close').addEventListener('click', () => {
-    resumePopup.classList.remove('active');
-});
-
-resumePopup.addEventListener('click', (e) => {
-    if (e.target === resumePopup) {
-        resumePopup.classList.remove('active');
     }
 });
 
