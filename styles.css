@@ -2,6 +2,7 @@
     /* Dark theme variables */
     --color-bg: #121212;
     --color-surface: #1e1e1e;
+    --color-secondary-surface: #2C2C2C;
     --color-primary: #ffffff;
     --color-secondary: #03dac6;
     --color-text: #ffffff;
@@ -12,12 +13,26 @@
     /* Light theme variables */
     --color-bg-light: #ffffff;
     --color-surface-light: #f0f0f0;
+    --color-secondary-surface-light: #e0e0e0; /* Lighter surface for the second item */
     --color-primary-light: #121212;
     --color-secondary-light: #018786;
     --color-text-light: #121212;
     --color-text-secondary-light: #6c6c6c;
     --color-link-light: #018786;
     --color-link-hover-light: #121212;
+}
+  
+.light-theme {
+    /* Light theme variables */
+    --color-bg: #ffffff;
+    --color-surface: #f0f0f0;
+    --color-secondary-surface: #e0e0e0;
+    --color-primary: #121212;
+    --color-secondary: #018786;
+    --color-text: #121212;
+    --color-text-secondary: #6c6c6c;
+    --color-link: #018786;
+    --color-link-hover: #121212;
 }
 
 body, html {
@@ -60,8 +75,10 @@ body, html {
     transform: translateY(0);
 }
 
+
 .content {
     background: var(--color-surface);
+    text-align: center;
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -74,12 +91,12 @@ h1, h2 {
 
 h1 {
     font-size: 3em;
-    text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 h2 {
-    font-size: 2.5em;
+    font-family: "Italiana", sans-serif;
+    font-size: 3.5em;
     border-bottom: 2px solid var(--color-secondary);
     padding-bottom: 10px;
 }
@@ -87,7 +104,24 @@ h2 {
 p {
     line-height: 1.6;
     color: var(--color-text-secondary);
+    font-weight: normal;
+
 }
+
+
+.hero-subtitle .cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: var(--color-secondary);
+    animation: blink 0.7s infinite;
+  }
+  
+@keyframes blink {
+    0% { opacity: 0 }
+    50% { opacity: 1 }
+    100% { opacity: 0 }
+}
+
 
 .theme-toggle {
     margin-left: auto;
@@ -101,13 +135,13 @@ p {
 }
 
 .cert-link {
-    color: var(--color-link);
+    color: var(--color-accent);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .cert-link:hover {
-    color: var(--color-link-hover);
+    color: var(--color-secondary);
     text-decoration: underline;
 }
 
@@ -148,30 +182,47 @@ body.light-theme nav a:hover {
     object-position: center top;
 }
 
-.skill-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
-.skill-item {
+.skills-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.technology {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
     background-color: var(--color-surface);
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
-    padding: 20px;
-    position: relative;
+    width: 100px;
 }
 
-.skill-item:hover {
+.technology:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(3, 218, 198, 0.3);
+    box-shadow: 0 6px 12px rgba(1, 135, 134, 0.3);
 }
 
-.skill-item h3 {
-    color: var(--color-secondary);
-    margin-top: 0;
+.tech-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 5px;
+}
+
+.technology span {
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    text-align: center;
 }
 
 .project-grid {
@@ -221,7 +272,6 @@ nav {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     z-index: 1000;
     display: flex;
-    justify-content: center;
 }
 
 nav a {
@@ -474,17 +524,21 @@ nav a:hover {
 .education-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 20px;
+  }
+  
+.education-item:nth-child(even) {
+    background-color: var(--color-secondary-surface);
 }
+
 
 .education-item {
     background-color: var(--color-surface);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    color: var(--color-text);
     padding: 20px;
-}
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    }
 
 .education-item:hover {
     transform: translateY(-5px);
@@ -499,6 +553,7 @@ nav a:hover {
 .education-item p {
     margin: 5px 0;
 }
+
 
 .popup-details h4 {
     margin-bottom: 10px;

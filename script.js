@@ -22,6 +22,90 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const text = "Biomedical Engineer & AI Enthusiast";
+    const typedTextSpan = document.querySelector("#typed-text");
+    const cursorSpan = document.querySelector(".cursor");
+
+    const typingDelay = 50;
+    const erasingDelay = 100;
+    const newTextDelay = 1000; // Delay between current and next text
+    let charIndex = 0;
+
+    function type() {
+        if (charIndex < text.length) {
+            if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+            typedTextSpan.textContent += text.charAt(charIndex);
+            charIndex++;
+            setTimeout(type, typingDelay);
+        } else {
+            cursorSpan.classList.remove("typing");
+            // Remove cursor after typing is complete
+            setTimeout(() => {
+                cursorSpan.style.display = 'none';
+            }, newTextDelay);
+        }
+    }
+
+    if(typedTextSpan) {
+        setTimeout(type, newTextDelay);
+    }
+});
+
+
+// Define the Rosenbrock function
+function rosenbrock(x, y, a = 1, b = 100) {
+    return Math.pow((a - x), 2) + b * Math.pow((y - Math.pow(x, 2)), 2);
+}
+
+// Function to generate 3D plot surface data for Rosenbrock
+function generateSurfaceData() {
+    const x = [];
+    const y = [];
+    const z = [];
+
+    for (let i = -2; i <= 2; i += 0.1) {
+        for (let j = -1; j <= 3; j += 0.1) {
+            x.push(i);
+            y.push(j);
+            z.push(rosenbrock(i, j));
+        }
+    }
+    
+    return { x, y, z };
+}
+
+// Function to initialize the 3D plot
+function initializePlot() {
+    const surfaceData = generateSurfaceData();
+
+    Plotly.newPlot('optimizer-plot', [
+        {
+            type: 'mesh3d',
+            x: surfaceData.x,
+            y: surfaceData.y,
+            z: surfaceData.z,
+            opacity: 0.5,
+            color: 'blue'
+        },
+        {
+            type: 'scatter3d',
+            mode: 'markers',
+            x: [-2],
+            y: [2],
+            z: [rosenbrock(-2, 2)],
+            marker: { size: 5, color: 'red' }
+        }
+    ], {
+        title: 'Rosenbrock Function Optimization',
+        scene: {
+            xaxis: { title: 'X' },
+            yaxis: { title: 'Y' },
+            zaxis: { title: 'Z' }
+        }
+    });
+}
+
 
 
 // Project pop-up functionality
@@ -246,4 +330,5 @@ themeToggle.addEventListener('click', () => {
 function updateThemeIcon(theme) {
     themeIcon.className = theme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
 }
+
 

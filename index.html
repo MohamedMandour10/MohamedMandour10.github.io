@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Elsayed - Professional Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
     <div class="vector-shape shape-circle"></div>
@@ -29,7 +35,7 @@
         <section id="hero" class="hero-section">
             <div class="hero-content">
                 <h1 class="hero-title">Mohamed Elsayed</h1>
-                <p class="hero-subtitle">Biomedical Engineer & AI Enthusiast</p>
+                <p class="hero-subtitle"><span id="typed-text"></span><span class="cursor">|</span></p>
                 <div class="hero-cta">
                     <a href="#projects" class="cta-button">View Projects</a>
                     <a href="#contact" class="cta-button secondary">Contact Me</a>
@@ -46,7 +52,7 @@
         </section>
 
         <!-- Home Section -->
-        <div id="home" class="section">
+        <div id="home" class="section animated-box">
             <div class="content profile-section">
                 <div class="profile-info">
                     <h2>Welcome to my portfolio!</h2>
@@ -63,34 +69,75 @@
             </div>
         </div>
 
+
         <!-- Skills Section -->
         <div id="skills" class="section">
             <div class="content">
                 <h2>Skills</h2>
-                <div class="skill-grid">
-                    <div class="skill-item">
-                        <h3><i class="fas fa-robot"></i> Machine learning</h3>
-                        <p>Scikit-learn, Keras, PyTorch, OpenCV, Scipy</p>
+                <div class="skills-grid">
+                    <div class="skills-row">
+                        <div class="technology">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="tech-icon" alt="C++">
+                            <span><strong>C++</strong></span>
+                        </div>
+                        <div class="technology">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="tech-icon" alt="Python">
+                            <span><strong>Python</strong></span>
+                        </div>
+                        <div class="technology">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="tech-icon" alt="NumPy">
+                            <span><strong>NumPy</strong></span>
+                        </div>
+                        <div class="technology">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="tech-icon" alt="Pandas">
+                            <span><strong>Pandas</strong></span>
+                        </div>
+                        <div class="technology">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" class="tech-icon" alt="Matplotlib">
+                            <span><strong>Matplotlib</strong></span>
+                        </div>
+                        <div class="technology">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="tech-icon" alt="SQL">
+                            <span><strong>SQL</strong></span>
+                        </div>
+                        <div class="technology">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" class="tech-icon" alt="PyTorch">
+                            <span><strong>PyTorch</span>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <h3><i class="fas fa-database"></i> Data Analysis</h3>
-                        <p>SQL, Dask, Polars, NumPy, Pandas, Matplotlib, Seaborn</p>
-                    </div>
-                    <div class="skill-item">
-                        <h3><i class="fas fa-desktop"></i> Desktop App Development</h3>
-                        <p>Qt5, PyQt</p>
-                    </div>
-                    <div class="skill-item">
-                        <h3><i class="fas fa-code-branch"></i> Version Control</h3>
-                        <p>Git, GitHub</p>
-                    </div>
-                    <div class="skill-item">
-                        <h3><i class="fas fa-code"></i> Programming Concepts</h3>
-                        <p>OOP, Functional Programming, Data Structures, Algorithms</p>
-                    </div>
-                    <div class="skill-item">
-                        <h3><i class="fas fa-paint-brush"></i> Design</h3>
-                        <p>Adobe Photoshop, Adobe Illustrator, PowerPoint, Blender</p>
+                    <div class="skills-row">
+                        <div class="technology">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" class="tech-icon" alt="OpenCV">
+                            <span><strong>OpenCV</strong></span>
+                        </div>
+                        <div class="technology">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" class="tech-icon" alt="Scipy">
+                            <span><strong>Scikitlearn</strong></span>
+                        </div>
+                        <div class="technology">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" class="tech-icon" alt="Keras">
+                            <span><strong>Tensorflow</strong></span>
+                        </div>
+                        <div class="technology">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/qt/qt-original.svg" class="tech-icon" alt="QT">
+                            <span><strong>QT</strong></span>
+                        </div>
+                        <div class="technology">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="tech-icon" alt="Git">
+                            <span><strong>Git</strong></span>
+                        </div>
+                        <div class="technology">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="tech-icon" alt="GitHub">
+                            <span><strong>GitHub</strong></span>
+                        </div>
+                        <div class="technology">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" class="tech-icon" alt="Blender">
+                            <span><strong>Blender</strong></span>
+                        </div>
+                        <div class="technology">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" class="tech-icon" alt="Photoshop">
+                            <span><strong>Photoshop</strong></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -175,19 +222,19 @@
                 <h2>Education</h2>
                 <div class="education-grid">
                     <div class="education-item">
-                        <h3>Bachelor of System and Biomedical Engineering - Present</h3>
+                        <h3><i class="fa fa-graduation-cap"></i> Bachelor of System and Biomedical Engineering - Present</h3>
                         <p><strong>University:</strong> Cairo University</p>
                         <p><strong>Expected Graduation Year:</strong> 2025</p>
-                        <p><strong>GPA:</strong> 3.6/4.0</p>
+                        <p><strong>GPA:</strong> 3.5/4.0</p>
                     </div>
                     <div class="education-item">
-                        <h3>Professional Certifications</h3>
+                        <h3><i class="fa fa-certificate"></i> Professional Certifications</h3>
                         <p><strong>Neural Networks and Deep Learning:</strong> <a href="https://drive.google.com/file/d/1NtRDYXj2q1NE_UxSom5zJ2ZV15qIsv4T/view?usp=drive_link" class="cert-link">Deeplearning.ai</a></p>
                         <p><strong>Supervised Machine Learning:</strong> <a href="https://drive.google.com/file/d/1M-mPHqdWcFMypK2IkPMqgsy6aRhJkzYu/view?usp=drive_link" class="cert-link">Deeplearning.ai</a></p>
                         <p><strong>Clean Code and Code Refactoring:</strong> <a href="https://drive.google.com/file/d/1sOc-_XuQhuSVaOPoYt6TL2zt4CX1zpHK/view?usp=drive_link" class="cert-link">Ezz Medical</a></p>
                     </div>                 
                     <div class="education-item">
-                        <h3>Core Courses</h3>
+                        <h3><i class="fa fa-book"></i> Core Courses</h3>
                         <p><strong>Math & Statistics:</strong> Calculus, Linear Algebra, Multi-Variable Calculus, Biostatitics</p>
                         <p><strong>Machine/Deep Learning:</strong> Ai in Medical fields, Foundation of Deep Learning</p>
                         <p><strong>Computer Science:</strong> OOP, Data Structures, Algorithms, DataBase, Embedded Systems</p>
@@ -230,8 +277,6 @@
             <div class="popup-details"></div>
         </div>
     </div>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script.js"></script>
