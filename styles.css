@@ -738,6 +738,37 @@ nav a:hover {
     animation: fadeInUp 1s ease-out;
 }
 
+.gradient-text {
+    background: linear-gradient(
+        45deg,
+        var(--color-secondary) 0%,
+        #00ffff 25%,  /* Bright cyan */
+        var(--color-primary) 50%,
+        var(--color-secondary) 100%
+    );
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
+/* Animation for a dynamic effect */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-text {
+    background-size: 300% auto;
+    animation: gradient-animation 7s ease infinite;
+}
+
 .hero-subtitle {
     font-size: 1.5em;
     margin-bottom: 30px;
