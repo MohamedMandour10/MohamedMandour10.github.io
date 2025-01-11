@@ -112,16 +112,15 @@ function initializePlot() {
 const projects = [
     {
         id: 1,
-        title: "ICU Monitor Viewer",
-        github: "https://github.com/MohamedMandour10/Vital-Signals-Multichannel-Viewer",
-        image: "Assets\\task1.webp",
-        technologies: ["Python", "PyQt6", "FPDF"],
+        title: "Classifying Blood Clot Origin using DeepLearning",
+        github: "https://github.com/MohamedMandour10/Image-Classification-of-Stroke-Blood-Clot-Origin",
+        image: "Assets/clot-origin-graphs.png",
+        technologies: ["Python", "Hugging Face", "Computer Vision", "Transfer learning"],
         features: [
-            "File Handling: Support for browsing and opening signal files in multiple formats, including CSV and DAT.",
-            "Graph Display: Present signals in two identical graphs, each with controls for zoom, pan, and play/pause.",
-            "Cine Mode: Display signals in a continuous running mode, similar to ICU monitors.",
-            "Signal Manipulation: Allow users to change color, control cine speed, zoom, pan, and move signals between graphs.",
-            "Report Export: Allow exporting reports to PDF, including graph snapshots and data statistics for displayed signals."
+            "Developed an efficient preprocessing pipeline that processed 200GB+ of pathology data and filtered 124,800 patches to 118,600 high-quality samples",
+            "Created a MobileNetV3-based background classifier and utilized Otsu's thresholding to ensure optimal image quality for analysis",
+            "Applied transfer learning and weighted multi-class logarithmic loss to handle limited data constraints and class imbalances effectively",
+            "Implemented PoolFormer and CCT models achieving 87.52% accuracy and 0.8691 F1-score, improving upon existing solutions for stroke clot classification"
         ],
     },
     {
