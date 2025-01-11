@@ -23,7 +23,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const text = "Biomedical Engineer & AI Enthusiast";
+    const text = " AI & Biomedical Engineer";
     const typedTextSpan = document.querySelector("#typed-text");
     const cursorSpan = document.querySelector(".cursor");
 
